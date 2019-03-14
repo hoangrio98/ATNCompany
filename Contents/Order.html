@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Order</title>
+	<link rel="stylesheet" href= "../CSS/Site.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script>
+		function setPrice()
+		{
+			var n = f1.txtProduct.selectedIndex;
+			if(n==1)
+			   {
+			   		f1.txtPrice.value = 17000;
+			   }
+			else if(n==2)
+					{
+						f1.txtPrice.value = 30000;
+					}
+			else if(n==3)
+					{
+						f1.txtPrice.value = 35000;
+					}
+			else if(n==4)
+					{
+						f1.txtPrice.value = 38000;
+					}
+			else if(n==5)
+					{
+						f1.txtPrice.value = 38000;
+					}
+			else if(n==6)
+					{
+						f1.txtPrice.value = 30000;
+					}
+					
+		}
+		function getPrice()
+		{
+			f1.txtTotal.value = f1.txtQuantity.value * f1.txtPrice.value;
+		}
+	</script>
+</head>
+
+<body>
+	<div>
+		<h1 id="header" align="center">KIMONO COFFEE and TEA SHOP</h1>
+	</div>
+	<div>
+	<nav class="navbar navbar-inverse">
+ 		<div class="container-fluid">
+    		<ul class="nav navbar-nav">
+     			<li class="active"><a href="Home.html">Home</a></li>
+				<li class="active"><a a href="Menu.html">Menu</a></li>
+				<li class="active"><a a href="Drinks.html">Drinks</a></li>
+				<li class="active"><a a href="Desserts.html">Dessert</a></li>
+				<form class="navbar-form navbar-left" action="/action_page.php">
+      				<div class="form-group">
+        				<input type="text" class="form-control" placeholder="Search">
+      				</div>
+      				<button type="submit" class="btn btn-default">Submit</button>
+    			</form>
+        	</ul>
+   			<ul class="nav navbar-nav navbar-right">
+				<li><a href="FeedbackPage.html"><span class="glyphicon glyphicon-bookmark"></span>Feedback</a></li>
+      			<li><a href="Registration.html"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+      			<li><a href="Login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+				<li><a href="../Admin/AdminLogin.html"><span class="glyphicon glyphicon-lock"></span> Admin</a></li>
+   			</ul>
+  		</div>
+	</nav>
+	</div>
+	<div align="center">
+	<form name="f1">
+		<h2 style="color: red">Order Page</h2>
+		<img src="../Images/KImono form.jpg">
+		<table border="2" class="table-hover" style="background: #FFAF80">
+			<tr>
+				<td>Username:</td>
+				<td><input type="text" name="txtName" required>*</td>
+			</tr>
+			<tr>
+				<td>Address:</td>
+				<td><textarea name="txtAdr"></textarea></td>
+			</tr>
+			<tr>
+				<td>Phone Number:</td>
+				<td><input type="text" name="txtPhone" required>*</td>
+			</tr>
+			<tr>
+				<td>Email:</td>
+				<td><input type="text" name="txtEmail" required>*</td>
+			</tr>
+			<tr>
+				<td>Product:</td>
+				<td><select name="txtProduct" onChange="setPrice()">
+					<option>--Select Product--</option>
+					<option>Black Coffe</option>
+					<option>Cappuccino</option>
+					<option>Peach Tea</option>
+					<option>Berry Jasmine Tea</option>
+					<option>Very Berry</option>
+					<option>Cheese Salted Eggs</option>
+					</select>*
+				</td>
+			</tr>
+			<tr>
+				<td>Unit Price:</td>
+				<td><input type="text" name="txtPrice"></td>
+			</tr>
+			<tr>
+				<td>Quantity:</td>
+				<td><input type="number" name="txtQuantity" onChange="getPrice()">*</td>
+			</tr>
+			<tr>
+				<td>Aumount Total:</td>
+				<td><input type="text" name="txtTotal"></td>
+			</tr>
+		</table>
+		<input type="button" value="Buy" class="btn btn-success" onClick="return confirm('You made a successful purchase. Thank you!!!')">
+		<input type="reset" value="Reset" class="btn btn-warning">
+	</form>
+	</div>
+	<div id="footer" align="center">
+		<h3>Address:</h3>
+		<ul>
+			<li>103 Hồ Học Lãm, P.An Lạc, Q.Bình Tân, TP.HCM</li>
+			<li>Hotline: +84 888177677</li>
+			<li>Email: trangkimono@gmail.com</li>
+		</ul>
+	</div>
+</body>
+</html>
