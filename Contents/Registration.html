@@ -1,0 +1,203 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Information Customer Page</title>
+	<link rel="stylesheet" href= "../CSS/Site.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script>
+		function checkInfo()
+		{
+			name=document.f1.txtFull.value;
+			if(name=="")
+			   {
+				   alert('Full name is required...');
+				   f1.txtFull.focus;
+				   return;
+			   }
+			user=document.f1.txtName.value;
+			if(user=="")
+			   {
+				   alert('Username is required...');
+				   f1.txtName.focus;
+				   return;
+			   }
+			pass=document.f1.txtPass.value;
+			if(pass=="")
+			   {
+				   alert('Password is required...');
+				   f1.txtPass.focus;
+				   return;
+			   }
+			confirm=document.f1.txtConfirm.value;
+			if(confirm=="")
+			   {
+				   alert('Confirm password is required...');
+				   f1.txtConfirm.focus;
+				   return;
+			   }
+			address=document.f1.txtAdd.value;
+			if(address=="")
+			   {
+				   alert('Address is required...');
+				   f1.txtAdd.focus;
+				   return;
+			   }
+			phonenumber=document.f1.txtPhone.value;
+			re=/^[0-9]*$/;
+			if(phonenumber=="")
+				{
+					alert('Phone Number is required...');
+					f1.txtPhone.focus;
+					return;
+				}
+			else if(!re.exec(phonenumber))
+				{
+					alert('Phone Number is incorrect...');
+					f1.txtPhone.value="";
+					f1.txtPhone.focus;
+					return;
+				}
+			email=document.f1.txtMail.value;
+			re=/^[a-zA-Z][a-zA-Z0-9]+@+([a-zA-Z0-9]+.+[a-zA-Z0-9])+$/;
+			if(email=="")
+			   {
+				   alert('E-mail is required...');
+				   f1.txtMail.focus;
+				   return;
+			   }
+			else if(!re.exec(email))
+				{
+					alert('E-mail is incorrect...');
+					f1.txtMail.value="";
+					f1.txtMail.focus;
+					return;
+				}
+			dob=document.f1.txtDate.value;
+			if(dob=="")
+				{
+					alert('Date of Birth is required...');
+					f1.txtDate.focus();
+					return;
+				}
+			else
+				{
+					alert('Sign Up Success!!!');
+					location="Login.html";
+					
+				}
+		}
+	</script>
+	<script src="../JavaScripts/register.js"></script>
+</head>
+
+<body>
+	<div>
+		<h1 id="header" align="center">KIMONO COFFEE and TEA SHOP</h1>
+	</div>
+	<div>
+	<nav class="navbar navbar-inverse">
+ 		<div class="container-fluid">
+    		<ul class="nav navbar-nav">
+     			<li class="active"><a href="Home.html">Home</a></li>
+				<li class="active"><a a href="Menu.html">Menu</a></li>
+				<li class="active"><a a href="Drinks.html">Drinks</a></li>
+				<li class="active"><a a href="Desserts.html">Dessert</a></li>
+				<form class="navbar-form navbar-left" action="/action_page.php">
+      				<div class="form-group">
+        				<input type="text" class="form-control" placeholder="Search">
+      				</div>
+      				<button type="submit" class="btn btn-default">Submit</button>
+    			</form>
+        	</ul>
+   			<ul class="nav navbar-nav navbar-right">
+				<li><a href="FeedbackPage.html"><span class="glyphicon glyphicon-bookmark"></span>Feedback</a></li>
+      			<li><a href="Registration.html"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+      			<li><a href="Login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+				<li><a href="../Admin/AdminLogin.html"><span class="glyphicon glyphicon-lock"></span> Admin</a></li>
+   			</ul>
+  		</div>
+	</nav>
+	</div>
+	<div id="main" align="center">
+		<h2 style="color: red">Information Customer Page</h2>
+		<img src= "../Images/KImono form.jpg">
+		<form name="f1">
+			<table  class="table table-hover" border="20" align="center" bordercolor="#FDC884">
+				<tr>
+					<td><label>Fullname:</label></td>
+					<td><input type="text" name="txtFull" placeholder="Please enter your full name">*</td>
+				</tr>
+				<tr>
+					<td><label>Username:</label></td>
+					<td><input type="text" name="txtName" placeholder="Your Username">*</td>
+				</tr>
+				<tr>
+					<td><label>Password:</label></td>
+					<td><input type="text" name="txtPass" placeholder="Your Password">*</td>
+				</tr>
+				<tr>
+					<td><label>Confirm Password:</label></td>
+					<td><input type="text" name="txtConfirm" placeholder="Confirm above password">*</td>
+				</tr>
+				<tr>
+					<td><label>Address:</label></td>
+					<td><textarea name="txtAdd" placeholder="Your address"></textarea></td>
+				</tr>
+				<tr>
+					<td><label>Phone Number:</label></td>
+					<td><input type="text" name="txtPhone" placeholder="Your phone number"></td>
+				</tr>
+				<tr>
+					<td><label>E-mail:</label></td>
+					<td><input type="text" name="txtMail" placeholder="example@gmail.com">*</td>
+				</tr>
+				<tr>
+					<td><label>Date of Birth:</label></td>
+					<td><input type="text" name="txtDate" placeholder="MM/DD/YY"></td>
+				</tr>
+				<tr>
+					<td><label>City:</label></td>
+					<td>
+						<select name="txtCity">
+							<option>--Select Country--</option>
+							<option>VietNam</option>
+							<option>Indonesia</option>
+							<option>Thailand</option>
+							<option>France</option>
+							<option>America</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td><label>Gender:</label></td>
+					<td><input type="radio" name="gt"/>Male
+						<input type="radio" name="gt"/>Female</td>
+				</tr>
+				<tr>
+					<td><label>Hobbies:</label></td>
+					<td>
+						<input name="st" type="checkbox"/>Shopping
+						<input name="st" type="checkbox"/>Eating and drinking
+						<input name="st" type="checkbox"/>Traveling
+					</td>
+				</tr>
+			</table>
+			<p><strong>You must to Check your information before submit!!!</strong></p>
+			<div align="center">
+				<input type="button" value="Submit" class="btn btn-sm" onClick="checkInfo()">
+				<input type="button" value="Check Info" class="btn btn-warning" onClick="checklogin()">
+				<input type="reset" value="Reset" class="btn btn-sm"/>
+			</div>
+		</form>
+	</div>
+	<div id="footer" align="center">
+		<h3>Address:</h3>
+		<ul>
+			<li>103 Hồ Học Lãm, P.An Lạc, Q.Bình Tân, TP.HCM</li>
+			<li>Hotline: +84 888177677</li>
+			<li>Email: trangkimono@gmail.com</li>
+		</ul>
+	</div>
+</body>
+</html>
