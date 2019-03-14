@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Home</title>
+	<link rel="stylesheet" href= "../CSS/Site.css">
+	<link rel="stylesheet" href="../CSS/Slideshow.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+	<div>
+		<h1 id="header" align="center">ATN COMPANY</h1>
+	</div>
+	<div>
+	<nav class="navbar navbar-inverse">
+ 		<div class="container-fluid">
+    		<ul class="nav navbar-nav">
+     			<li class="active"><a href="Home.html">Home</a></li>
+				<li class="active"><a a href="Products.html">Products</a></li>
+				<form class="navbar-form navbar-left" action="/action_page.php">
+      				<div class="form-group">
+        				<input type="text" class="form-control" placeholder="Search">
+      				</div>
+      				<button type="submit" class="btn btn-default">Submit</button>
+    			</form>
+        	</ul>
+   			<ul class="nav navbar-nav navbar-right">
+				<li><a href="FeedbackPage.html"><span class="glyphicon glyphicon-bookmark"></span>Feedback</a></li>
+      			<li><a href="Registration.html"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+      			<li><a href="Login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+				<li><a href="../Admin/AdminLogin.html"><span class="glyphicon glyphicon-lock"></span> Admin</a></li>
+   			</ul>
+  		</div>
+	</nav>
+	</div>
+	<div id="main" align="center">
+		<div class="slideshow-container">
+			<div class="mySlides fade">
+  				<img src="../Images/111.jpg" width="40%">
+			</div>
+			
+			<div class="mySlides fade">
+  				<img src="../Images/222.jpg" width="40%">
+			</div>
+			
+			<div class="mySlides fade">
+  				<img src="../Images/333.jpg" width="40%">
+			</div>
+		</div>
+		<br>
+
+		<div style="text-align:center">
+			<span class="dot"></span> 
+  			<span class="dot"></span> 
+  			<span class="dot"></span> 
+		</div>
+
+		<script>
+			var slideIndex = 0;
+			showSlides();
+
+			function showSlides() {
+    		var i;
+    		var slides = document.getElementsByClassName("mySlides");
+    		var dots = document.getElementsByClassName("dot");
+    		for (i = 0; i < slides.length; i++) {
+       			slides[i].style.display = "none";  
+    		}
+    		slideIndex++;
+    		if (slideIndex > slides.length) {slideIndex = 1}    
+    		for (i = 0; i < dots.length; i++) {
+        		dots[i].className = dots[i].className.replace(" active", "");
+    		}
+    		slides[slideIndex-1].style.display = "block";  
+    		dots[slideIndex-1].className += " active";
+    		setTimeout(showSlides, 2000);
+			}
+		</script>
+	</div>
+	<div id="footer" align="center">
+		<h3>Address:</h3>
+		<ul>
+			<li>103 Hồ Học Lãm, P.An Lạc, Q.Bình Tân, TP.HCM</li>
+			<li>Hotline: +84 888177677</li>
+			<li>Email: trangkimono@gmail.com</li>
+		</ul>
+	</div>
+</body>
+</html>
